@@ -84,12 +84,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusinessLogic\Exceptions\NotCorrectPasswordException.cs" />
+    <Compile Include="BusinessLogic\Exceptions\PasswordsNotEqualException.cs" />
+    <Compile Include="BusinessLogic\Exceptions\UserAlreadyExistsException.cs" />
+    <Compile Include="BusinessLogic\Exceptions\UserNotFoundException.cs" />
+    <Compile Include="BusinessLogic\LoginLogout.cs" />
+    <Compile Include="BusinessLogic\Registration.cs" />
     <Compile Include="Command\ObservableObject.cs" />
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="UI\BoundPasswordBox.cs" />
     <Compile Include="UI\UIRepository.cs" />
     <Compile Include="Validation\RequiredValidation.cs" />
     <Compile Include="ViewModel\LoginRegContainerViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\RegistrationViewModel.cs" />
     <Compile Include="View\AddNewPostWindow.xaml.cs">
       <DependentUpon>AddNewPostWindow.xaml</DependentUpon>
     </Compile>
@@ -195,10 +203,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BlogDb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="BlogDb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>BlogDb.mdf</DependentUpon>
     </Content>
     <Content Include="Model\DbModel.Context.tt">

@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace BlogApp.Command
 {
-    class RelayCommand
+    class RelayCommand : ICommand
     {
         private Predicate<object> _canExecute; // amit ennek átadunk, az dönti el, hogy lefuthat-e az adott action. általános esetben mindig true-t adunk át, de ha speciális eset kell, hogy ne lehessen futtatni a metódust, ez esetben ide logikai kiértékelést adunk át
         private Action<object> _execute; //ebbe kerül a metódushívás

@@ -18,8 +18,8 @@
     </Window.DataContext>
     <Grid>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
-            <Button x:Name="signin" Height="37" Content="Bejelentkezés" Width="247" Command="{Binding SwitchToSignIn}"  Panel.ZIndex="1"/>
-            <Button x:Name="signup" Height="37" Content="Regisztráció" Width="247" Command="{Binding SwitchToSignUp}" Panel.ZIndex="1"/>
+            <Button x:Name="signin" Height="37" Content="Bejelentkezés" Width="247" Click="signin_Click"  Panel.ZIndex="1"/>
+            <Button x:Name="signup" Height="37" Content="Regisztráció" Width="247" Click="signup_Click" Panel.ZIndex="1"/>
         </StackPanel>
         <Frame x:Name="Main" Margin="0 35 0 0" NavigationUIVisibility="Hidden"/>
     </Grid>

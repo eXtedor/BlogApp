@@ -28,5 +28,19 @@ namespace BlogApp.View
             signin.Style = Primary;
             signup.Style = Secondary;
         }
+
+        private void signin_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new LoginPage(); // átvált LoginPage-re a <frame>
+            signin.Style = Primary;
+            signup.Style = Secondary;
+        }
+
+        private void signup_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new RegistrationPage(); // átvált RegisterPage-re a <frame>
+            signup.Style = Primary;
+            signin.Style = Secondary;
+        }
     }
 }
