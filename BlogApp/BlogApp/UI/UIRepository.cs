@@ -36,5 +36,12 @@ namespace BlogApp.UI
             get { return _currentClientId; }
             set { _currentClientId = value; }
         }
+
+        private int _modifiyPost;
+        public int ModifyPost
+        {
+            get { return _modifiyPost; }
+            set { _modifiyPost = value; }
+        }
     }
 }

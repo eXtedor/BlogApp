@@ -118,9 +118,11 @@
     <Compile Include="UI\BoundPasswordBox.cs" />
     <Compile Include="UI\UIRepository.cs" />
     <Compile Include="Validation\RequiredValidation.cs" />
+    <Compile Include="ViewModel\AllPostsPageViewModel.cs" />
     <Compile Include="ViewModel\LoginRegContainerViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainContainerWindowViewModel.cs" />
+    <Compile Include="ViewModel\MyPostsPageViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
     <Compile Include="View\AllPostsPage.xaml.cs">
       <DependentUpon>AllPostsPage.xaml</DependentUpon>
@@ -133,6 +135,9 @@
     </Compile>
     <Compile Include="View\MainContainerWindow.xaml.cs">
       <DependentUpon>MainContainerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ModifyPostWindow.xaml.cs">
+      <DependentUpon>ModifyPostWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MyPostsPage.xaml.cs">
       <DependentUpon>MyPostsPage.xaml</DependentUpon>
@@ -165,6 +170,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainContainerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ModifyPostWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
