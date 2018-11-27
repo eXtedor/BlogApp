@@ -4,11 +4,25 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BlogApp.View"
-      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Background="{DynamicResource MaterialDesignPaper}"
+      TextElement.FontWeight="Medium"
+      TextElement.FontSize="14"
+      FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MyPostsPage">
 
-    <Grid>
-        
+    <Grid HorizontalAlignment="Center">
+        <ListView ItemsSource="{Binding }" Width="400">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <GroupBox Header="{Binding }" HorizontalContentAlignment="Stretch">
+                        <TextBlock Text="{Binding }"/>
+                    </GroupBox>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
