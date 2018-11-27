@@ -203,10 +203,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BlogDb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="BlogDb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>BlogDb.mdf</DependentUpon>
     </Content>
     <Content Include="Model\DbModel.Context.tt">
