@@ -34,7 +34,7 @@ namespace BlogApp.ViewModel
             {
                 using (var context = new BlogDbEntities())
                 {
-                    _MyPosts = context.Post.Where(p=> p.User_Id == UserId).ToList();
+                    _MyPosts = context.Post.Where(p=> p.User_Id == UserId).OrderByDescending(p=>p.Id).ToList();
                 }
                 return _MyPosts;
             }

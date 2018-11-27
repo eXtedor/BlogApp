@@ -34,7 +34,7 @@ namespace BlogApp.ViewModel
             {
                 using (var context = new BlogDbEntities())
                 {
-                   _AllPosts = context.Post.ToList();
+                   _AllPosts = context.Post.OrderByDescending(p => p.Id).ToList();
                 }
                 return _AllPosts;
             }
