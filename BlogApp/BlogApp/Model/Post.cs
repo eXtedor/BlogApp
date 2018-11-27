@@ -15,9 +15,7 @@ namespace BlogApp.Model
     public partial class Post
     {
         public int Id { get; set; }
-        public string Title { get; set; }
         public string Body { get; set; }
-        public string Footer { get; set; }
         public System.DateTime Created_At { get; set; }
         public Nullable<System.DateTime> Modified_At { get; set; }
         public int User_Id { get; set; }

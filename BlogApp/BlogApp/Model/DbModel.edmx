@@ -10,9 +10,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Body" Type="nvarchar(max)" />
-          <Property Name="Footer" Type="varchar" MaxLength="50" />
+          <Property Name="Body" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Created_At" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="Modified_At" Type="datetime2" Precision="7" />
           <Property Name="User_Id" Type="int" Nullable="false" />
@@ -22,14 +20,14 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Created_At" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="Last_Login" Type="datetime2" Precision="7" />
         </EntityType>
-        <Association Name="FK_UserId_To_User_Id">
+        <Association Name="FK_User_Id_To_User_User_Id">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Post" Type="Self.Post" Multiplicity="*" />
           <ReferentialConstraint>
@@ -44,7 +42,7 @@
         <EntityContainer Name="BlogDbModelStoreContainer">
           <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_UserId_To_User_Id" Association="Self.FK_UserId_To_User_Id">
+          <AssociationSet Name="FK_User_Id_To_User_User_Id" Association="Self.FK_User_Id_To_User_User_Id">
             <End Role="User" EntitySet="User" />
             <End Role="Post" EntitySet="Post" />
           </AssociationSet>
@@ -59,28 +57,26 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Footer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Body" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Created_At" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="Modified_At" Type="DateTime" Precision="7" />
           <Property Name="User_Id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="Self.FK_UserId_To_User_Id" FromRole="Post" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Id_To_User_User_Id" FromRole="Post" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Created_At" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="Last_Login" Type="DateTime" Precision="7" />
-          <NavigationProperty Name="Post" Relationship="Self.FK_UserId_To_User_Id" FromRole="User" ToRole="Post" />
+          <NavigationProperty Name="Post" Relationship="Self.FK_User_Id_To_User_User_Id" FromRole="User" ToRole="Post" />
         </EntityType>
-        <Association Name="FK_UserId_To_User_Id">
+        <Association Name="FK_User_Id_To_User_User_Id">
           <End Role="User" Type="Self.User" Multiplicity="1" />
           <End Role="Post" Type="Self.Post" Multiplicity="*" />
           <ReferentialConstraint>
@@ -95,7 +91,7 @@
         <EntityContainer Name="BlogDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Post" EntityType="Self.Post" />
           <EntitySet Name="User" EntityType="Self.User" />
-          <AssociationSet Name="FK_UserId_To_User_Id" Association="Self.FK_UserId_To_User_Id">
+          <AssociationSet Name="FK_User_Id_To_User_User_Id" Association="Self.FK_User_Id_To_User_User_Id">
             <End Role="User" EntitySet="User" />
             <End Role="Post" EntitySet="Post" />
           </AssociationSet>
@@ -110,9 +106,7 @@
             <EntityTypeMapping TypeName="BlogDbModel.Post">
               <MappingFragment StoreEntitySet="Post">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Body" ColumnName="Body" />
-                <ScalarProperty Name="Footer" ColumnName="Footer" />
                 <ScalarProperty Name="Created_At" ColumnName="Created_At" />
                 <ScalarProperty Name="Modified_At" ColumnName="Modified_At" />
                 <ScalarProperty Name="User_Id" ColumnName="User_Id" />
