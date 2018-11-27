@@ -4,9 +4,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlogApp.View"
+        xmlns:vm="clr-namespace:BlogApp.ViewModel" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainContainerWindow" Height="450" Width="800">
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
+        Title="BlogApp" Height="500" Width="908" MinWidth="700" MinHeight="500" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <vm:MainContainerWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-        
+        <Grid Height="35" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="45" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" x:Name="AllPosts" Height="37" Content="Összes poszt" Click="AllPosts_Click"/>
+            <Button Grid.Column="1" x:Name="MyPosts" Height="37" Content="Saját posztjaim" Click="MyPosts_Click"/>
+            <Button Grid.Column="2" Style="{StaticResource MaterialDesignRaisedAccentButton}" x:Name="logout" Height="37" Command="{Binding Logout}" Padding="0" ToolTip="Kijelentkezés">
+                <materialDesign:PackIcon Kind="LogoutVariant" Height="25" Width="25"/>
+            </Button>
+        </Grid>
+        <Frame x:Name="Main" Margin="0 35 0 0" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

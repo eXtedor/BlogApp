@@ -36,7 +36,7 @@ namespace BlogApp.BusinessLogic
         {
             using (var context = new BlogDbEntities())
             {
-                var CurrentUser = context.User.Where(u => u.Id == UIRepository.Instance.CurrentClientId).First();
+                var CurrentUser = context.User.Find(UIRepository.Instance.CurrentClientId);
                 CurrentUser.Last_Login = DateTime.Now;
                 context.Entry(CurrentUser).State = System.Data.Entity.EntityState.Modified;
                 context.SaveChanges();

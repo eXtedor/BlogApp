@@ -19,9 +19,29 @@ namespace BlogApp.View
     /// </summary>
     public partial class MainContainerWindow : Window
     {
+        Style Primary = Application.Current.FindResource("MaterialDesignRaisedButton") as Style;
+        Style Secondary = Application.Current.FindResource("MaterialDesignRaisedDarkButton") as Style;
+        //Kicseréli az aktív tab stílusát Primary stílusra, a másik kettőt Secondaryra
+        public void ChangeTab(Button active, Button inactive)
+        {
+            active.Style = Primary;
+            inactive.Style = Secondary;
+        }
         public MainContainerWindow()
         {
             InitializeComponent();
+            Main.Content = new AllPostsPage();
+        }
+        private void MyPosts_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new MyPostsPage(); 
+            ChangeTab(MyPosts, AllPosts);
+        }
+
+        private void AllPosts_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new AllPostsPage(); 
+            ChangeTab(AllPosts, MyPosts);
         }
     }
 }

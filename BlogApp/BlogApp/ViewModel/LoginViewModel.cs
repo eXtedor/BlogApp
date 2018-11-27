@@ -44,7 +44,7 @@ namespace BlogApp.ViewModel
             {
                 if (LoginLogout.UserLogin(username, password))
                 {
-                    new PostsWindow().Show();
+                    new MainContainerWindow().Show();
                     Application.Current.MainWindow.Close();
                 }
             }

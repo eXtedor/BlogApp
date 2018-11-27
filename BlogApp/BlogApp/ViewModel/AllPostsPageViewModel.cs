@@ -59,7 +59,7 @@ namespace BlogApp.ViewModel
             {
                 if (_DeletePost == null)
                 {
-                    _DeletePost = new RelayCommand(p => true, p => DelPost(Convert.ToInt32(p));
+                    _DeletePost = new RelayCommand(p => true, p => DelPost(Convert.ToInt32(p)));
                 }
                 return _DeletePost;
             }

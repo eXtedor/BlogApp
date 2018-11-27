@@ -12,7 +12,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-        xmlns:vm="clr-namespace:BlogApp.ViewModel">
+        xmlns:vm="clr-namespace:BlogApp.ViewModel" Title="BlogApp">
     <Window.DataContext>
         <vm:LoginRegContainerViewModel/>
     </Window.DataContext>
