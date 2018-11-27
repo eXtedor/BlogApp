@@ -84,11 +84,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusinessLogic\EventAggregator.cs" />
     <Compile Include="BusinessLogic\Exceptions\NotCorrectPasswordException.cs" />
     <Compile Include="BusinessLogic\Exceptions\PasswordsNotEqualException.cs" />
     <Compile Include="BusinessLogic\Exceptions\UserAlreadyExistsException.cs" />
     <Compile Include="BusinessLogic\Exceptions\UserNotFoundException.cs" />
     <Compile Include="BusinessLogic\LoginLogout.cs" />
+    <Compile Include="BusinessLogic\PostActions.cs" />
     <Compile Include="BusinessLogic\Registration.cs" />
     <Compile Include="Command\ObservableObject.cs" />
     <Compile Include="Command\RelayCommand.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Validation\RequiredValidation.cs" />
     <Compile Include="ViewModel\LoginRegContainerViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\MainContainerWindowViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
     <Compile Include="View\AllPostsPage.xaml.cs">
       <DependentUpon>AllPostsPage.xaml</DependentUpon>
