@@ -24,5 +24,10 @@ namespace BlogApp.View
         {
             InitializeComponent();
         }
+
+        private void RegistrationPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            firstname.Focus();
+        }
     }
 }
