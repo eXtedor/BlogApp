@@ -17,7 +17,19 @@
         <vm:MainContainerWindowViewModel/>
     </Window.DataContext>
     <Grid>
-        <Grid Height="35" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+        <!-- Fő szerkezet -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Navigáció -->
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -29,6 +41,32 @@
                 <materialDesign:PackIcon Kind="LogoutVariant" Height="25" Width="25"/>
             </Button>
         </Grid>
-        <Frame x:Name="Main" Margin="0 35 0 0" NavigationUIVisibility="Hidden"/>
+        
+        <!-- Page -->
+        <Frame x:Name="Main" Margin="0 35 0 0" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.Column="1"/>
+        
+        <!-- Bejegyzés "drawer" -->
+        <materialDesign:DrawerHost Margin="0 10 0 0" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                   Grid.Row="1" Grid.Column="2">
+            <materialDesign:DrawerHost.RightDrawerContent>
+                <StackPanel Margin="0" Width="200">
+                    <Button Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="{x:Static Dock.Right}"
+                        Margin="4" HorizontalAlignment="Left" Style="{StaticResource MaterialDesignFloatingActionMiniButton}" Width="15" Height="15">
+                        <materialDesign:PackIcon Kind="Close" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Button>
+                    <TextBlock Margin="4" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignTitleTextBlock}" >
+                        Új bejegyzés
+                    </TextBlock>
+                    <TextBox TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" VerticalContentAlignment="Top" Padding="5" 
+                             MaxLines="10" materialDesign:HintAssist.Hint="Mi jár a fejedben?"/>
+                    <Button Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Center" Margin="2 5 2 0"> Megosztás </Button>
+
+                </StackPanel>
+            </materialDesign:DrawerHost.RightDrawerContent>
+            <Button Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}" HorizontalAlignment="Right" VerticalAlignment="Top"
+                CommandParameter="{x:Static Dock.Right}" Margin="4">
+                Új bejegyzés
+            </Button>
+        </materialDesign:DrawerHost>
     </Grid>
 </Window>
