@@ -12,7 +12,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-        Title="Bejegyzés módosítása" Height="450" Width="450" WindowStartupLocation="CenterScreen">
+        Title="ModifyPostWindow" Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"/>
@@ -20,6 +20,8 @@
         </Grid.RowDefinitions>
         <TextBox Width="400" Height="340" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Padding="5"
                  Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"/>
-        <Button Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}" Width="100">Módosít</Button>
+        <Button Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" VerticalAlignment="Top">
+            Módosít
+        </Button>
     </Grid>
 </Window>
