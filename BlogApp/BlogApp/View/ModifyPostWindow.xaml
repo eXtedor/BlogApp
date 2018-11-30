@@ -12,7 +12,7 @@
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-        Title="ModifyPostWindow" Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+        Title="ModifyPostWindow" Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.DataContext>
         <vm:ModifyPostWindowViewModel/>
     </Window.DataContext>

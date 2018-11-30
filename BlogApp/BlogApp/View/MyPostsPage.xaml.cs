@@ -24,10 +24,5 @@ namespace BlogApp.View
         {
             InitializeComponent();
         }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }

@@ -24,8 +24,8 @@
                     <GroupBox Header="{Binding User.UserName}" Width="400">
                         <GroupBox.ContextMenu>
                             <ContextMenu>
-                                <MenuItem Header="Poszt törlése" Command="{Binding Path=DataContext.DeletePost, Source={x:Reference MyListView}}" CommandParameter="{Binding Id}"/>
-                                <MenuItem Header="Poszt módosítása" Command="{Binding Path=DataContext.ModifyPost, Source={x:Reference MyListView}}" CommandParameter="{Binding Id}" Click="MenuItem_Click"/>
+                                <MenuItem Header="Poszt törlése" Command="{Binding Path=DataContext.DeletePost, Source={x:Reference MyListView}}" CommandParameter="{Binding Id}" FontSize="12"/>
+                                <MenuItem Header="Poszt módosítása" Command="{Binding Path=DataContext.ModifyPost, Source={x:Reference MyListView}}" CommandParameter="{Binding Id}" FontSize="12"/>
                             </ContextMenu>
                         </GroupBox.ContextMenu>
                         <StackPanel>
