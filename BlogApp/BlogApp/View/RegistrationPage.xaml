@@ -19,7 +19,7 @@
     </Page.DataContext>
     <Grid>
         <StackPanel Width="250" HorizontalAlignment="center" VerticalAlignment="Center" Height="430">
-            <TextBlock Text="Register" HorizontalAlignment="Center" Margin="0 0 0 20" FontSize="24"/>
+            <TextBlock Text="Regisztráció" HorizontalAlignment="Center" Margin="0 0 0 20" FontSize="24"/>
             <TextBlock Text="Keresztnév" Margin="5 0 5 0"/>
             <TextBox x:Name="firstname" MinWidth="240" HorizontalAlignment="center" Margin="5 0 5 20">
                 <Binding Path="FirstName"/>

@@ -25,7 +25,7 @@
     </Page.InputBindings>
     <Grid>
         <StackPanel Width="250" HorizontalAlignment="center" VerticalAlignment="center" Height="270">
-            <TextBlock Text="Login" HorizontalAlignment="Center" Margin="0 0 0 20" FontSize="24"/>
+            <TextBlock Text="Bejelentkezés" HorizontalAlignment="Center" Margin="0 0 0 20" FontSize="24"/>
             <TextBlock Text="Felhasználónév" Margin="5 0 5 0"/>
             <TextBox x:Name="userName" MinWidth="240" HorizontalAlignment="center" Margin="5 0 5 20">
                 <Binding Path="UserName"/>
