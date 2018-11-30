@@ -46,11 +46,15 @@ namespace BlogApp.ViewModel
             {
                 if (_ModifyPost == null)
                 {
-                    _ModifyPost = new RelayCommand(p => true, p => UIRepository.Instance.ModifyPost = Convert.ToInt32(p));
+                    _ModifyPost = new RelayCommand(p => true, p => SetModifyableId(Convert.ToInt32(p)));
                 }
-                new ModifyPostWindow();
                 return _ModifyPost;
             }
+        }
+        private void SetModifyableId(int id)
+        {
+            UIRepository.Instance.ModifyPost = id;
+            new ModifyPostWindow().Show();
         }
         private ICommand _DeletePost;
         public ICommand DeletePost

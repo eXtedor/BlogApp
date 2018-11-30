@@ -13,14 +13,17 @@
         TextElement.FontSize="14"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
         Title="ModifyPostWindow" Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+    <Window.DataContext>
+        <vm:ModifyPostWindowViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="7*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <TextBox Width="400" Height="340" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Padding="5"
-                 Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"/>
-        <Button Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" VerticalAlignment="Top">
+                 Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Text="{Binding PostBody, Mode=TwoWay}"/>
+        <Button Grid.Row="1" Style="{StaticResource MaterialDesignRaisedButton}" Width="100" VerticalAlignment="Top" Command="{Binding ModifyPost}" Click="Button_Click">
             Módosít
         </Button>
     </Grid>

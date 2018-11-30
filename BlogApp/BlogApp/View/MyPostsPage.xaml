@@ -25,6 +25,7 @@
                         <GroupBox.ContextMenu>
                             <ContextMenu>
                                 <MenuItem Header="Poszt törlése" Command="{Binding Path=DataContext.DeletePost, Source={x:Reference MyListView}}" CommandParameter="{Binding Id}"/>
+                                <MenuItem Header="Poszt módosítása" Command="{Binding Path=DataContext.ModifyPost, Source={x:Reference MyListView}}" CommandParameter="{Binding Id}" Click="MenuItem_Click"/>
                             </ContextMenu>
                         </GroupBox.ContextMenu>
                         <StackPanel>

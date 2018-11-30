@@ -124,6 +124,7 @@
     <Compile Include="ViewModel\LoginRegContainerViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainContainerWindowViewModel.cs" />
+    <Compile Include="ViewModel\ModifyPostWindowViewModel.cs" />
     <Compile Include="ViewModel\MyPostsPageViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
     <Compile Include="View\AllPostsPage.xaml.cs">
