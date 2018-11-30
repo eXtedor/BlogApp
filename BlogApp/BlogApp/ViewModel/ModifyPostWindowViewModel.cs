@@ -45,7 +45,6 @@ namespace BlogApp.ViewModel
         public void modifyPost(int id, string body)
         {
             PostActions.ModifyPost(id, body);
-            MessageBox.Show("A poszt megváltoztatva!");
             SendMessage("Posts updated");
         }
         private ICommand _ModifyPost;
