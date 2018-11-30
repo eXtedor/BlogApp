@@ -12,14 +12,20 @@
       TextElement.FontSize="14"
       FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MyPostsPage">
-
+      Title="MyPostsPage"
+      xmlns:vm="clr-namespace:BlogApp.ViewModel">
+    <Page.DataContext>
+        <vm:MyPostsPageViewModel/>
+    </Page.DataContext>
     <Grid HorizontalAlignment="Center">
-        <ListView ItemsSource="{Binding }" Width="400">
+        <ListView Margin="10" ItemsSource="{Binding MyPosts}" HorizontalAlignment="Center">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <GroupBox Header="{Binding }" HorizontalContentAlignment="Stretch">
-                        <TextBlock Text="{Binding }"/>
+                    <GroupBox Header="{Binding User.UserName}" Width="400">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Body}" TextWrapping="Wrap" Padding="3" Margin="0 0 0 5"/>
+                            <TextBlock Text="{Binding Created_At}" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignBody1TextBlock}" FontStyle="Italic"/>
+                        </StackPanel>
                     </GroupBox>
                 </DataTemplate>
             </ListView.ItemTemplate>

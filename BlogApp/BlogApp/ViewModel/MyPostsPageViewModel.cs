@@ -27,14 +27,14 @@ namespace BlogApp.ViewModel
         {
             get { return UIRepository.Instance.CurrentClientId; }
         }
-        private ICollection<Post> _MyPosts;
-        public ICollection<Post> MyPosts
+        private ICollection<PostModel> _MyPosts;
+        public ICollection<PostModel> MyPosts
         {
             get
             {
                 using (var context = new BlogDbEntities())
                 {
-                    _MyPosts = context.Post.Where(p=> p.User_Id == UserId).OrderByDescending(p=>p.Id).ToList();
+                    _MyPosts = PostMapper.EntityCollectionToModelCollection(context.Post.Where(p=> p.User_Id == UserId).OrderByDescending(p=>p.Id).ToList());
                 }
                 return _MyPosts;
             }
