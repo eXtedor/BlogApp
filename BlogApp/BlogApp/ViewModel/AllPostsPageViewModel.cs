@@ -27,14 +27,15 @@ namespace BlogApp.ViewModel
         {
             get { return UIRepository.Instance.CurrentClientId; }
         }
-        private ICollection<Post> _AllPosts;
-        public ICollection<Post> AllPosts
+        private ICollection<PostModel> _AllPosts;
+        public ICollection<PostModel> AllPosts
         {
             get
             {
                 using (var context = new BlogDbEntities())
                 {
-                    _AllPosts = context.Post.OrderByDescending(p => p.Id).ToList();
+                    
+                    _AllPosts = PostMapper.EntityCollectionToModelCollection(context.Post.OrderByDescending(p => p.Id).ToList());
                 }
                 return _AllPosts;
             }

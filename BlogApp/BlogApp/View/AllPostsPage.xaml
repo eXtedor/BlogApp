@@ -197,8 +197,7 @@
         <ListView Margin="10" ItemsSource="{Binding AllPosts}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <!--<GroupBox Header="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}, Path=DataContext.uName}">-->
-                    <GroupBox Header="{Binding UserName}" Width="455">
+                    <GroupBox Header="{Binding User.UserName}" Width="455">
                         <StackPanel>
                             <TextBlock Text="{Binding Body}"/>
                             <TextBlock Text="{Binding Created_At}"/>

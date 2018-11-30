@@ -112,6 +112,8 @@
     <Compile Include="Model\Post.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\PostMapper.cs" />
+    <Compile Include="Model\PostModel.cs" />
     <Compile Include="Model\User.cs">
       <DependentUpon>DbModel.tt</DependentUpon>
     </Compile>
