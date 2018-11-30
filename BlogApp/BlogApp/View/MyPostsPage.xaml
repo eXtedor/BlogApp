@@ -18,10 +18,15 @@
         <vm:MyPostsPageViewModel/>
     </Page.DataContext>
     <Grid HorizontalAlignment="Center">
-        <ListView Margin="10" ItemsSource="{Binding MyPosts}" HorizontalAlignment="Center">
+        <ListView Margin="10" ItemsSource="{Binding MyPosts}" HorizontalAlignment="Center" Name="MyListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <GroupBox Header="{Binding User.UserName}" Width="400">
+                        <GroupBox.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Poszt törlése" Command="{Binding Path=DataContext.DeletePost, Source={x:Reference MyListView}}" CommandParameter="{Binding Id}"/>
+                            </ContextMenu>
+                        </GroupBox.ContextMenu>
                         <StackPanel>
                             <TextBlock Text="{Binding Body}" TextWrapping="Wrap" Padding="3" Margin="0 0 0 5"/>
                             <TextBlock Text="{Binding Created_At}" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignBody1TextBlock}" FontStyle="Italic"/>
