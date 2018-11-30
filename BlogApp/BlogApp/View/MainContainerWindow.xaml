@@ -58,8 +58,10 @@
                         Új bejegyzés
                     </TextBlock>
                     <TextBox TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" VerticalContentAlignment="Top" Padding="5" 
-                             MaxLines="10" materialDesign:HintAssist.Hint="Mi jár a fejedben?"/>
-                    <Button Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Center" Margin="2 5 2 0"> Megosztás </Button>
+                             MaxLines="10" materialDesign:HintAssist.Hint="Mi jár a fejedben?">
+                        <Binding Path="PostBody"/>
+                    </TextBox>
+                    <Button Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Center" Margin="2 5 2 0" Command="{Binding AddPost}"> Megosztás </Button>
 
                 </StackPanel>
             </materialDesign:DrawerHost.RightDrawerContent>
