@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:BlogApp.ViewModel" 
       xmlns:local="clr-namespace:BlogApp.View"      
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d"
@@ -13,7 +14,9 @@
       FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AllPostsPage">
-
+    <Page.DataContext>
+        <vm:AllPostsPageViewModel/>
+    </Page.DataContext>
     <Grid>
         <!--
         <materialDesign:DrawerHost
@@ -191,5 +194,18 @@
             </Grid>
         </materialDesign:DrawerHost>
         -->
+        <ListView Margin="10" ItemsSource="{Binding AllPosts}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <!--<GroupBox Header="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Page}}, Path=DataContext.uName}">-->
+                    <GroupBox Header="{Binding UserName}" Width="455">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Body}"/>
+                            <TextBlock Text="{Binding Created_At}"/>
+                        </StackPanel>
+                    </GroupBox>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>
