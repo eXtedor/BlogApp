@@ -62,8 +62,12 @@ namespace BlogApp.ViewModel
         }
         public void AddNewPost(string body, int userid)
         {
-            PostActions.AddPost(body, userid);
-            EventAggregator.BroadCast("Posts changed");
+            if (body.Length < 100)
+            {
+                PostActions.AddPost(body, userid);
+                EventAggregator.BroadCast("Posts changed");
+            }
+            else MessageBox.Show("A poszt nem lehet 100 karakternél hosszabb!");
         }
     }
 }
